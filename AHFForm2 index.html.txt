@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPR Training Registration | Agasthya Health Foundation</title>
+
+<style>
+:root {
+  --primary:#1f3b63;
+  --secondary:#00695c;
+  --divider:#e6eef5;
+  --shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',Roboto,Arial,sans-serif;
+  background:linear-gradient(135deg,#f4f7fb,#dbe5f0);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:16px;
+}
+
+.container{
+  background:#ffffff;
+  max-width:760px;
+  width:100%;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+/* HEADER */
+.header-banner{
+  background:linear-gradient(135deg,var(--primary),#152a4a);
+  color:#fff;
+  text-align:center;
+  padding:24px 16px;
+}
+
+.header-banner img{
+  display:block;
+  margin:0 auto 12px auto;
+  max-width:240px;
+  width:100%;
+  height:auto;
+}
+
+.header-banner h1{
+  margin:0;
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.header-banner p{
+  margin-top:6px;
+  opacity:0.9;
+  font-size:0.95rem;
+}
+
+/* FORM */
+form{
+  padding:28px 24px 32px;
+}
+
+.section-title{
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--secondary);
+  margin-bottom:14px;
+}
+
+.section-divider{
+  height:1px;
+  background:var(--divider);
+  margin:20px 0 28px;
+}
+
+/* GRID */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+@media(max-width:600px){
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* INPUTS */
+.input-group label{
+  font-size:0.85rem;
+  font-weight:600;
+  margin-bottom:6px;
+  display:block;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #e0e0e0;
+  border-radius:8px;
+  font-size:0.95rem;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+  border-color:var(--secondary);
+  outline:none;
+}
+
+.full-width{
+  grid-column:1 / -1;
+}
+
+/* OPTIONS */
+.option-group{
+  background:#f8f9fa;
+  padding:14px;
+  border-radius:8px;
+}
+
+.option-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:0.9rem;
+  margin-bottom:8px;
+}
+
+.option-item:last-child{
+  margin-bottom:0;
+}
+
+.option-item input{
+  accent-color:var(--primary);
+  margin-top:3px;
+}
+
+/* BUTTON */
+.btn-submit{
+  width:100%;
+  margin-top:28px;
+  background:var(--primary);
+  color:#fff;
+  padding:16px;
+  border:none;
+  border-radius:10px;
+  font-size:1.05rem;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.btn-submit:hover{
+  background:#142743;
+}
+
+/* SUCCESS */
+#success-msg{
+  display:none;
+  padding:36px;
+  text-align:center;
+}
+
+.check-icon{
+  width:56px;
+  height:56px;
+  background:#4caf50;
+  color:#fff;
+  font-size:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="header-banner">
+  <img 
+    src="https://raw.githubusercontent.com/karthiksreepathi/ahf-assets/main/Screenshot%202025-12-28%20103629.png"
+    alt="Agasthya Health Foundation Logo">
+  <h1>Agasthya Health Foundation</h1>
+  <p>CPR & Basic Life Support Training Registration</p>
+</div>
+
+<!-- SUCCESS -->
+<div id="success-msg">
+  <div class="check-icon">✓</div>
+  <h2>Registration Successful</h2>
+  <p>Your details have been securely recorded.</p>
+</div>
+
+<!-- FORM -->
+<form name="submit-to-google-sheet" id="cprForm">
+
+<div class="section-title">Participant Details</div>
+
+<div class="form-grid">
+  <div class="input-group">
+    <label>First Name</label>
+    <input name="First Name" required>
+  </div>
+  <div class="input-group">
+    <label>Last Name</label>
+    <input name="Last Name" required>
+  </div>
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" name="Email" required>
+  </div>
+  <div class="input-group">
+    <label>Phone</label>
+    <input name="Phone" required>
+  </div>
+  <div class="input-group">
+    <label>Age</label>
+    <input type="number" name="Age" min="16" required>
+  </div>
+  <div class="input-group">
+    <label>Gender</label>
+    <select name="Gender">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+      <option>Prefer not to say</option>
+    </select>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section-title">Health & Safety</div>
+
+<div class="input-group full-width">
+  <label>Any medical condition restricting physical activity?</label>
+  <div class="option-group">
+    <label class="option-item">
+      <input type="radio" name="Medical Conditions" value="None" checked>
+      No
+    </label>
+    <label class="option-item">
+      <input type="radio" name="Medical Conditions" value="Yes">
+      Yes
+    </label>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="input-group full-width">
+  <label>Consent</label>
+  <div class="option-group">
+    <label class="option-item">
+      <input type="checkbox" name="Consent" value="Agreed" required>
+      I confirm that I am physically able to participate in hands-on CPR training.
+    </label>
+  </div>
+</div>
+
+<button class="btn-submit">Complete Registration</button>
+
+</form>
+</div>
+
+<script>
+const scriptURL =
+'https://script.google.com/macros/s/AKfycbyhHDc9SfINbn3wSNQRYx5im_fZsFEdBT2ljrBg3BlDY2P2vfHOSGx7Xrr4Cn-d-sRbcg/exec';
+
+const form = document.forms['submit-to-google-sheet'];
+const success = document.getElementById('success-msg');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(() => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    });
+});
+</script>
+
+</body>
+</html>
